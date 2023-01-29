@@ -1,0 +1,31 @@
+{% extends 'layouts/index.html' %}
+
+
+{% block content %}
+    <style type="text/css">
+        .product {
+            width: 80%;
+            margin-left: 10%;
+        }
+
+        .product > h5 {
+            margin-top: 20px;
+        }
+
+        .product {
+            width: 80%;
+        }
+    </style>
+    <div class="product">
+        {% if product.image %}
+            <img src="/media/{{ product.image }}" alt="image not found :(">
+        {% else %}
+            <img src="/media/images.jpg/" alt="">
+        {% endif %}
+        <div style="display: flex; justify-content: space-between">
+            <h6>{{ product.title }}</h6>
+        </div>
+        <h6>{{ product.descriptions }}</h6>
+        <h5>{{ product.create_date }}</h5>
+    </div>
+{% endblock %}
